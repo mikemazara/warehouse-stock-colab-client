@@ -10,15 +10,14 @@ const InventoryPage = () => {
 
   useEffect(() => {
     axios.get(requestApi + "/inventories").then((res) => {
-      console.log(res.data);
       setInventoryData(res.data);
     });
   }, []);
   return (
     <div className="inventory-page__list">
-        {inventoryData?.map((item) => (
-            <InventoryItem item={item}/>
-        ))}
+      {inventoryData?.map((item) => (
+        <InventoryItem item={item} />
+      ))}
     </div>
   );
 };

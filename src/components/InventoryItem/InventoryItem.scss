@@ -9,15 +9,26 @@
     align-items: flex-start;
     flex-wrap: wrap;
     width: 95%;
-    height: 20vh;
+    height: 25rem;
     padding: 2rem;
     border: 1px solid $slate;
+    
     &__label {
-      margin: 0 2rem;
+      margin: 0 2rem 0 0;
       color: $slate;
+      width: 30%;
     }
     &__value {
-      margin: 0 2rem 2rem 2rem;
+      margin: 0 4rem 2rem 0;
+      width: 30%;
+    }
+    &__delete {
+      margin-top: 7rem;
+      width: 10%;
+    }
+    &__edit {
+      margin-top: 17rem;
+      width: 10%;
     }
   }
 }
