@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import InventoryItem from "../../components/InventoryItem/InventoryItem";
+import InventoryBanner from "../../components/InventoryBanner/InventoryBanner";
 import "./InventoryPage.scss";
 
 const InventoryPage = () => {
@@ -14,10 +15,13 @@ const InventoryPage = () => {
     });
   }, []);
   return (
-    <div className="inventory-page__list">
-      {inventoryData?.map((item) => (
-        <InventoryItem item={item} />
-      ))}
+    <div className="inventory">
+        <div className="inventory__container">
+            <InventoryBanner />
+            {inventoryData?.map((item) => (
+            <InventoryItem item={item} />
+            ))}
+        </div>
     </div>
   );
 };

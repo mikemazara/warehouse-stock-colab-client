@@ -1,0 +1,132 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+
+.inventory {
+  &__banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    @include tablet{
+        height: 9rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+    }
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    height: 3rem;
+    border-radius: 5px 5px 0 0;
+    padding: 0 1rem;
+    margin-top: 2rem;
+    @include tablet{
+        width: auto;
+    }
+  }
+  &__title{
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  &__banner-actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    @include tablet{
+        width: 50vw;
+        flex-wrap: nowrap;
+
+    }
+  }
+  &__search{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    height: 5.5rem;
+    border-radius: 5px;
+    padding: 0 1rem;
+    @include tablet{
+        width: 23vw;
+        height: 4rem;
+    }
+  }
+  &__search-icon{
+    position: relative;
+    top: 2.25rem;
+    left: 26.5vw;
+    @include tablet{
+        top: 2rem;
+        left: 7vw;
+    }
+  }
+
+  &__search-input{
+    width: 100%;
+    height: 3rem;
+    padding: 0 1rem;
+    border: 1px solid $cloud;
+    border-radius: 2rem;
+    &::placeholder{
+        font-size: 1rem;
+        font-weight: 400;
+        color: $slate;
+    }
+  }
+  &__add-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    height: 3rem;
+    border-radius: 5px;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    @include tablet{
+        width: auto;
+        padding-top: 3.5rem;
+    }
+  }
+  &__add-link{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 30rem;
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    @include tablet{
+        width: 22vw;
+        height: 2.75rem;
+    }
+  }
+
+  &__add-button{
+    width: 100%;
+    height: 100%;
+    background-color: $indigo;
+    color: $white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+}
