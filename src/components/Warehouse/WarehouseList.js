@@ -6,6 +6,7 @@ import editIcon from "../../assets/icons/edit-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import searchIcon from "../../assets/icons/search-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./WarehouseList.scss";
 
 async function getWarehouses() {
@@ -38,27 +39,68 @@ const WarehouseList = () => {
   return (
     <div className="warehouse">
       <div className="warehouse__container">
-        <div className="warehouse__header">
-          <h1 className="warehouse__title">Warehouses</h1>
-        </div>
-        <div className="warehouse__search">
-          <img
-            className="warehouse__search-icon"
-            src={searchIcon}
-            alt="search icon"
-          />
-          <input
-            className="warehouse__search-input"
-            type="text"
-            placeholder="Search..."
-          />
-        </div>
-        <div className="warehouse__add-button-container">
-          <Link to="/warehouse/add" className="warehouse__add-link">
-            <button className="warehouse__add-button">
-              + Add New Warehouse
-            </button>
-          </Link>
+        <div className="warehouse__banner">
+          <div className="warehouse__header">
+            <h1 className="warehouse__title">Warehouses</h1>
+          </div>
+          <div className="warehouse__banner-actions">
+            <div className="warehouse__search">
+              <img
+                className="warehouse__search-icon"
+                src={searchIcon}
+                alt="search icon"
+              />
+              <input
+                className="warehouse__search-input"
+                type="text"
+                placeholder="Search..."
+              />
+            </div>
+            <div className="warehouse__add-button-container">
+              <Link to="/warehouse/add" className="warehouse__add-link">
+                <button className="warehouse__add-button">
+                  + Add New Warehouse
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="warehouse__table-header">
+            <div className="warehouse__table-header-option">
+              <h3 className="warehouse__table-header-name">WAREHOUSE </h3>
+              <img
+                className="warehouse__table-header-sort"
+                src={sortIcon}
+                alt="sort arrow"
+              />
+            </div>
+            <div className="warehouse__table-header-option">
+              <h3 className="warehouse__table-header-name">ADDRESS </h3>
+              <img
+                className="warehouse__table-header-sort"
+                src={sortIcon}
+                alt="sort arrow"
+              />
+            </div>
+            <div className="warehouse__table-header-option">
+              <h3 className="warehouse__table-header-name">CONTACT NAME </h3>
+              <img
+                className="warehouse__table-header-sort"
+                src={sortIcon}
+                alt="sort arrow"
+              />
+            </div>
+            <div className="warehouse__table-header-option">
+              <h3 className="warehouse__table-header-name">
+                CONTACT INFORMATION{" "}
+              </h3>
+              <img
+                className="warehouse__table-header-sort"
+                src={sortIcon}
+                alt="sort arrow"
+              />
+            </div>
+            <h3 className="warehouse__table-header-name">ACTIONS</h3>
+          </div>
         </div>
         <div className="warehouse__list-container">
           {/* {warehouses.map((warehouse) => <WarehouseListItem warehouse={warehouse}/> )} */}
@@ -91,18 +133,22 @@ const WarehouseList = () => {
                     </h2>
                   </Link>
                   <h3 className="warehouse__name-header">ADDRESS</h3>
-                  <p className="warehouse__info">
+                  <p className="warehouse__info warehouse__info-address">
                     {address}, {city}, {country}
                   </p>
                 </div>
                 <div className="warehouse__contact">
                   <h3 className="warehouse__name-header">CONTACT NAME</h3>
-                  <p className="warehouse__info">{contact_name}</p>
+                  <p className="warehouse__info warehouse__contact-name">
+                    {contact_name}
+                  </p>
                   <h3 className="warehouse__name-header">
                     CONTACT INFORMATION
                   </h3>
-                  <p className="warehouse__info">{contact_phone}</p>
-                  <p className="warehouse__info">{contact_email}</p>
+                  <div className="warehouse__contact-info">
+                    <p className="warehouse__info">{contact_phone}</p>
+                    <p className="warehouse__info">{contact_email}</p>
+                  </div>
                 </div>
                 <div className="warehouse__actions">
                   <Link to={`/warehouse/delete/${warehouse.id}`}>
