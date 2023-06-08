@@ -4,6 +4,8 @@
 .footer {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
+    height: 180rem;
 
     &__text {
         margin: 0;
