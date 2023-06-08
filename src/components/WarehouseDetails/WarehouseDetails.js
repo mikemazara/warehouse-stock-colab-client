@@ -33,7 +33,7 @@ const WarehouseDetails = ({ currentWarehouse })=>{
             <div className="details__divider"></div>
             <div className="details__info">
                 <div className="details__address">
-                    <h3 className="details__subtitle">WAREHOUSE ADDRESS</h3>
+                    <h3 className="details__subtitle">WAREHOUSE ADDRESS:</h3>
                     <p className="details__body">{address} <span className="details__break">{city}, {country}</span></p>
                 </div>
                 <div className="details__info-flex">
