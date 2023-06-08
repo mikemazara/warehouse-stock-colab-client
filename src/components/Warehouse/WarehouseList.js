@@ -74,7 +74,9 @@ const WarehouseList = () => {
               />
             </div>
             <div className="warehouse__table-header-option">
-              <h3 className="warehouse__table-header-name">ADDRESS </h3>
+              <h3 className="warehouse__table-header-name warehouse__table-header-name--address">
+                ADDRESS{" "}
+              </h3>
               <img
                 className="warehouse__table-header-sort"
                 src={sortIcon}
@@ -82,7 +84,9 @@ const WarehouseList = () => {
               />
             </div>
             <div className="warehouse__table-header-option">
-              <h3 className="warehouse__table-header-name">CONTACT NAME </h3>
+              <h3 className="warehouse__table-header-name warehouse__table-header-name--contact">
+                CONTACT NAME{" "}
+              </h3>
               <img
                 className="warehouse__table-header-sort"
                 src={sortIcon}
