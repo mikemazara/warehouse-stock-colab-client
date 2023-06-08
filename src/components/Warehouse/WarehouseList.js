@@ -1,6 +1,5 @@
 import React from "react";
-import axios from "axios";
-import { useState, useEffect } from "react";
+import useWarehouses from "../API functions/WarehouseApi";
 import { Link } from "react-router-dom";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
@@ -9,26 +8,6 @@ import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 import sortIcon from "../../assets/icons/sort-24px.svg";
 import "./WarehouseList.scss";
 
-async function getWarehouses() {
-  try {
-    const response = await axios.get("http://localhost:8080/warehouses");
-    const warehouses = response.data;
-    return warehouses;
-  } catch (error) {
-    console.error(error);
-  }
-}
-function useWarehouses() {
-  const [warehouses, setWarehouses] = useState(null);
-
-  useEffect(() => {
-    getWarehouses().then((warehouses) => {
-      setWarehouses(warehouses);
-    });
-  }, []);
-
-  return warehouses;
-}
 const WarehouseList = () => {
   const warehouses = useWarehouses();
 
@@ -107,7 +86,6 @@ const WarehouseList = () => {
           </div>
         </div>
         <div className="warehouse__list-container">
-          {/* {warehouses.map((warehouse) => <WarehouseListItem warehouse={warehouse}/> )} */}
           {warehouses.map((warehouse) => {
             const {
               id,
