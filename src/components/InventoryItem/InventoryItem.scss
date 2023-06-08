@@ -1,0 +1,23 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+
+.inventory {
+  &__item {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 95%;
+    height: 20vh;
+    padding: 2rem;
+    border: 1px solid $slate;
+    &__label {
+      margin: 0 2rem;
+      color: $slate;
+    }
+    &__value {
+      margin: 0 2rem 2rem 2rem;
+    }
+  }
+}
