@@ -15,7 +15,6 @@
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
-
     }
   }
   &__header{
@@ -54,7 +53,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    max-width: 30rem;
+    max-width: 35rem;
     height: 5.5rem;
     border-radius: 5px;
     padding: 0 1rem;
@@ -65,7 +64,7 @@
   }
   &__search-icon{
     position: relative;
-    top: 2.25rem;
+    top: 2.8rem;
     left: 26.5vw;
     @include tablet{
         top: 2rem;
@@ -90,11 +89,11 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 30rem;
+    max-width: 35rem;
     height: 3rem;
     border-radius: 5px;
     padding: 0 1rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     @include tablet{
         width: auto;
         padding-top: 3.5rem;
@@ -106,7 +105,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 30rem;
+    max-width: 35rem;
     height: 3rem;
     border-radius: 5px;
     color: white;

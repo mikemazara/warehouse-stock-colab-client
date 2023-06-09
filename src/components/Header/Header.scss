@@ -1,12 +1,13 @@
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/variables" as *;
+@use '../../styles/partials/variables' as *;
 
 .nav{
     padding: 1rem;
     background-color: $graphite;
     height: 12rem;
+    position: relative;
     @include tablet{
         padding: 2rem 2rem 0;
         display: flex;

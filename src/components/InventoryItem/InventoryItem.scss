@@ -18,30 +18,61 @@
       justify-content: flex-start;
       margin: 0 2rem 0 0;
       color: $slate;
-      width: 30%;
-      @include mobile-labels;
+      width: 31%;
+      @include mobile-body-large;
       
     }
     &__value {
       display: flex;
       justify-content: flex-start;
-      margin: 0 4rem 2rem 0;
-      width: 30%;
-      @include mobile-labels;
+      margin: 0 1.5rem 2rem 0;
+      width: 31%;
+      @include mobile-subheader;
+      font-weight: 400;
     }
-    &__name-link {
+    &__name {
+      width: 100%;
+      @include mobile-subheader;
+      &-link {
       text-decoration: none;
       display: flex;
       justify-content: flex-start;
-      width: 30%;
+      width: 50%;
       color: $indigo;
+      
+      }
+    }
+    &__status {
+      &--green {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $green;
+        background-color: rgba(21, 132, 99, 0.07);
+        width: 7rem;
+        height: 2rem;
+        border-radius: 20px;
+        font-weight: 600;
+      }
+      &--red {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $red;
+        background: rgba(201, 69, 21, 0.07);
+        border-radius: 20px;
+        width: 8.6rem;
+        height: 2rem;
+        
+        font-weight: 600;
+      }
     }
     &__delete {
-      margin-top: 5rem;
+      margin-top: 7rem;
       
     }
     &__edit {
-      margin-top: 8rem;
+      margin-top: 18rem;
     }
   }
 }

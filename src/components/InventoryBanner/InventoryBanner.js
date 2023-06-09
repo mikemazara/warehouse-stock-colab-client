@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./InventoryBanner.scss";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 
@@ -23,11 +23,11 @@ const InventoryBanner = () => {
           />
         </div>
         <div className="inventory__add-button-container">
-          <NavLink to="/inventory/add" className="inventory__add-link">
+          <Link to="/inventory/add" className="inventory__add-link">
             <button className="inventory__add-button">
               + Add New Warehouse
             </button>
-          </NavLink>
+          </Link>
         </div>
       </div>
     </div>
