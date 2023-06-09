@@ -4,23 +4,23 @@
 @use "../../styles/partials/colors" as *;
 
 .inv-item {
-    position: relative;
-    top: -75px;
-    margin: 1rem;
+  position: relative;
+  top: -4.688rem;
+  margin: 1rem;
   width: auto;
   background-color: $white;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
   border-radius: 3px;
 
-  @include tablet{
+  @include tablet {
     margin: 1rem 2rem;
-    top: -120px;
-}
-@include desktop {
-    top: -110px;
+    top: -7.5rem;
+  }
+  @include desktop {
+    top: -6.875rem;
     margin: 1rem 8rem;
-}
+  }
 
   &__header {
     display: flex;
@@ -29,12 +29,12 @@
     padding: 1.5rem 1rem 1.2rem 1rem;
     border-bottom: solid 1px $cloud;
 
-    @include tablet{
-        padding: 1.7rem 2rem 1.7rem 2rem;
+    @include tablet {
+      padding: 1.7rem 2rem 1.7rem 2rem;
     }
 
     @include desktop {
-        padding: 1.8rem 2.5rem 1rem 2.5rem;
+      padding: 1.8rem 2.5rem 1rem 2.5rem;
     }
   }
 
@@ -50,8 +50,8 @@
     margin-right: 2vw;
 
     @include tablet {
-        padding-bottom: 0.5rem;
-        margin-right: 1vw;
+      padding-bottom: 0.5rem;
+      margin-right: 1vw;
     }
   }
 
@@ -59,11 +59,11 @@
     width: 80%;
 
     @include tablet {
-        width: 97%;
+      width: 97%;
     }
 
     @include desktop {
-        width: 100%;
+      width: 100%;
     }
   }
 
@@ -71,7 +71,7 @@
     font-size: 1.5rem;
 
     @include tablet {
-        font-size: 2rem;
+      font-size: 2rem;
     }
   }
 
@@ -85,15 +85,15 @@
     background-color: $indigo;
 
     @include tablet {
-        justify-content: center;
-        align-items: center;
-        column-gap: 0.5rem;
-        width: 5rem;
-        height: 2.5rem;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.5rem;
+      width: 5rem;
+      height: 2.5rem;
     }
 
     @include desktop {
-        column-gap: 0.3rem;
+      column-gap: 0.3rem;
     }
   }
 
@@ -105,20 +105,19 @@
     filter: brightness(0) invert(1);
 
     @include tablet {
-        width: 1.2rem;
-        padding-left: 0;
+      width: 1.2rem;
+      padding-left: 0;
     }
-
   }
 
   &__edit-text {
     display: none;
 
     @include tablet {
-        display: contents;
-        color: $white;
-        font-size: 0.9rem;
-        font-weight: 600;
+      display: contents;
+      color: $white;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
   }
 
@@ -140,19 +139,19 @@
     }
 
     @include desktop {
-        padding: 1.4rem 2.5rem 1rem 2.5rem;
+      padding: 1.4rem 2.5rem 1rem 2.5rem;
     }
   }
 
-  &__right{
+  &__right {
     @include tablet {
-        border-left: solid 1px $cloud;
-        width: 65%;
-        padding-left: 2.5rem;
+      border-left: solid 1px $cloud;
+      width: 65%;
+      padding-left: 2.5rem;
     }
 
     @include desktop {
-        width: 50%;
+      width: 50%;
     }
   }
 
@@ -163,7 +162,7 @@
     color: $slate;
 
     @include tablet {
-        font-size: 0.75rem;
+      font-size: 0.75rem;
     }
   }
 
@@ -175,15 +174,15 @@
     border-radius: 20px;
 
     @include tablet {
-        padding: 0.4rem 0 2rem 0;
-        font-size: 0.88rem;
-        width: 90%;
-        line-height: 1.5;
-        margin: 0;
+      padding: 0.4rem 0 2rem 0;
+      font-size: 0.88rem;
+      width: 90%;
+      line-height: 1.5;
+      margin: 0;
     }
 
     @include desktop {
-        width: 100%;
+      width: 100%;
     }
   }
 
@@ -196,30 +195,30 @@
     text-transform: uppercase;
 
     @include tablet {
-        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-        font-size: 0.75rem;
-        text-align: center;
-        width: 100%;
+      padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      width: 100%;
     }
   }
 
   &__outstock {
     padding: 0.1rem 0.5rem 0.1rem 0.5rem;
-    color: $red; 
+    color: $red;
     background-color: rgba(201, 69, 21, 0.07);
     font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
 
     @include tablet {
-        padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-        font-size: 0.75rem;
-        text-align: center;
-        width: 100%;
+      padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      width: 100%;
     }
   }
 
-  &__status{
+  &__status {
     display: flex;
     flex-direction: column;
     row-gap: 0.2rem;
@@ -232,11 +231,11 @@
     padding-bottom: 0.2rem;
 
     @include tablet {
-        column-gap: 4.5rem;
+      column-gap: 4.5rem;
     }
 
     @include desktop {
-        column-gap: 10.5rem;
+      column-gap: 10.5rem;
     }
   }
 }
