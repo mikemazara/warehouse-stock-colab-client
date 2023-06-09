@@ -6,6 +6,7 @@
     align-items: $align-items;
     flex-direction: $flex-direction;
 }
+
 @mixin mobile {
     @media (min-width: 20rem) {
         @content;
