@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import "./InventoryBanner.scss";
-import searchIcon from "../../assets/Icons/search-24px.svg";
-
 
 const InventoryBanner = () => {
    return (
@@ -11,10 +9,8 @@ const InventoryBanner = () => {
       </div>
       <div className="inventory__banner-actions">
         <div className="inventory__search">
-          <img
+          <span
             className="inventory__search-icon"
-            src={searchIcon}
-            alt="search icon"
           />
           <input
             className="inventory__search-input"
