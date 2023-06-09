@@ -40,11 +40,10 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;
     @include tablet{
         width: 50vw;
         flex-wrap: nowrap;
-
+        justify-content: flex-end;
     }
   }
   &__search{
@@ -52,39 +51,42 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    max-width: 45rem;
+    width: 100vw;
+    max-width: 30rem;
     height: 2.5rem;
     border-radius: 5px;
     padding: 1rem;
     margin-bottom: 1rem;
     @include tablet{
-        width: 23vw;
-        height: 2rem;
+      width: 20rem;
+      height: 4rem;
+      padding: 0;
+      margin-top: 3rem;
     }
   }
-  &__search-icon{
-    position: absolute;
-    background-image: url("../../assets/Icons/search-24px.svg");
-    background-repeat: no-repeat;
-    width: 6vw;
-    height: 2rem;
-    right: max(5vw);
-    margin-left: 70vw;
-    margin-top: 0.5rem;
-    
-  }
-
+ 
   &__search-input{
     width: 100%;
     height: 3rem;
     padding: 1rem;
     border: 1px solid $cloud;
     border-radius: 2rem;
+    flex: 1;
+    padding: 5px;
+    background-image: url("../../assets/Icons/search-24px.svg");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 2rem 2rem;
+    @include tablet{
+      background-size: 3rem 3rem;
+    }
     &::placeholder{
         font-size: 1rem;
         font-weight: 400;
         color: $slate;
+        @include tablet{
+          font-size: 1.5rem;
+        }
     }
   }
   &__add-button-container{
@@ -92,14 +94,15 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 45rem;
+    max-width: 30rem;
     height: 3rem;
     border-radius: 5px;
     padding: 0 1rem;
     margin: 2rem 0;
     @include tablet{
-        width: auto;
+        width: 14rem;
         padding-top: 3.5rem;
+        margin-right: 2rem;
     }
   }
   &__add-link{
@@ -130,5 +133,12 @@
     font-weight: 600;
     border-radius: 2rem;
     cursor: pointer;
+    margin-bottom: 1.5rem;
+    @include tablet{
+      width: 12rem;
+      height: 4rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
   }
 }

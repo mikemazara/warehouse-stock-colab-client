@@ -21,7 +21,7 @@ const InventoryBanner = () => {
         <div className="inventory__add-button-container">
           <Link to="/inventory/add" className="inventory__add-link">
             <button className="inventory__add-button">
-              + Add New Warehouse
+              + Add New Item
             </button>
           </Link>
         </div>
