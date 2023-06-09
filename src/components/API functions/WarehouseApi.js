@@ -22,5 +22,37 @@ function useWarehouses() {
   return warehouses;
 }
 
+// create function to get warehouse by id to be referenced in EditForm.js
+async function getWarehouseById(id) {
+  try {
+    const response = await axios.get(`http://localhost:8080/warehouses/${id}`);
+    const warehouse = response.data;
+    return warehouse;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function useWarehouseById(id) {
+  const [warehouse, setWarehouse] = useState(null);
+
+  useEffect(() => {
+    getWarehouseById(id).then((warehouse) => {
+      setWarehouse(warehouse);
+    });
+  }, [id]);
+
+  return warehouse;
+}
+
+function putFunctionToEditWarehouse(id, warehouse) {
+  axios
+    .put(`http://localhost:8080/warehouses/${id}`, warehouse)
+    .then((response) => {
+      console.log(response);
+    });
+}
+
+export { getWarehouseById, useWarehouseById, putFunctionToEditWarehouse };
 export default useWarehouses;
 export { getWarehouses };
