@@ -1,7 +1,10 @@
 @use '../../styles/partials/mixins'as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/fonts' as *;
-
+@use '../../styles/partials/colors' as *;
+html {
+  font-size: 10px;
+}
 .inventory {
   position: relative;
   display: flex;

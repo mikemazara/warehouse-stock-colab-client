@@ -1,6 +1,7 @@
 @use '../../styles/partials/mixins'as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/colors' as *;
 
 .inventory {
   &__banner{
@@ -59,7 +60,7 @@
     margin-bottom: 1rem;
     @include tablet{
       width: 20rem;
-      height: 4rem;
+      height: 3rem;
       padding: 0;
       margin-top: 3rem;
     }
@@ -75,17 +76,18 @@
     padding: 5px;
     background-image: url("../../assets/Icons/search-24px.svg");
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: right 1rem center;
     background-size: 2rem 2rem;
     @include tablet{
-      background-size: 3rem 3rem;
+      
     }
     &::placeholder{
         font-size: 1rem;
         font-weight: 400;
         color: $slate;
+        
         @include tablet{
-          font-size: 1.5rem;
+          font-size: 1.2rem;
         }
     }
   }
@@ -136,8 +138,8 @@
     margin-bottom: 1.5rem;
     @include tablet{
       width: 12rem;
-      height: 4rem;
-      font-size: 1.5rem;
+      height: 3rem;
+      font-size: 1.2rem;
       font-weight: 500;
     }
   }
