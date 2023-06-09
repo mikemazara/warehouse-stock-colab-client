@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import arrow_back from "../../assets/icons/arrow_back-24px.svg";
 import edit from "../../assets/icons/edit-24px.svg";
 import "./InventoryItemDetails.scss";
@@ -8,6 +9,7 @@ const InventoryItemDetails = ({ currInventory }) => {
     <section className="inv-item">
       <div className="inv-item__header">
         <div className="inv-item__title-container">
+        <NavLink to={"/inventory"} className="inv-item__link">
           <button className="inv-item__arrow-button">
             <img
               className="inv-item__arrow"
@@ -15,13 +17,16 @@ const InventoryItemDetails = ({ currInventory }) => {
               alt="arrow back button"
             />
           </button>
+          </NavLink>
           <h2 className="inv-item__title">{currInventory.item_name}</h2>
         </div>
         <div className="inv-item__edit-container">
+            <NavLink to={`/inventory/${currInventory.id}/edit`} className="inv-item__link">
           <button className="inv-item__edit">
             <img className="inv-item__edit-icon" src={edit} alt="edit button" />
             <p className="inv-item__edit-text">Edit</p> 
           </button>
+          </NavLink>
         </div>
       </div>
       <div className="inv-item__details">
