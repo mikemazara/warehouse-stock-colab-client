@@ -33,12 +33,10 @@
         }
     }
     &__title{
-        font-size: 2rem;
-        font-weight: 600;
+        @include mobile-header;
     }
     &__subtitle{
-        font-size: 1rem;
-        font-weight: 600;
+        @include mobile-table;
         @include tablet{
             margin-bottom: 1rem;
         }
@@ -47,16 +45,16 @@
         }
     }
     &__body{
-        font-size: 1rem;
-        font-weight: 400;
+        @include mobile-table;
          @include desktop{
             @include body-large;
         }
 
     }
     &__pen{
-        height: 1.2rem;
-        width: 1.2rem;
+        height: 1.5rem;
+        width: 1.5rem;
+        padding-top: .3rem;
     }
     &__edit{
         @include mobile{
