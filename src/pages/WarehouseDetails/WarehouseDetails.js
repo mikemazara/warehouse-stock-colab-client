@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import WarehouseDetailsList from "../../components/WarehouseDetailsList/WarehouseDetailsList";
 import edit from "../../assets/icons/edit-white.svg";
 import arrow from "../../assets/icons/arrow_back-24px.svg";
 import "./WarehouseDetails.scss";
@@ -79,6 +80,7 @@ const WarehouseDetails = () => {
           </div>
         </div>
       </div>
+      <WarehouseDetailsList/>
     </section>
   );
 };
