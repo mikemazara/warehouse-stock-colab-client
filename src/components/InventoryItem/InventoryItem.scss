@@ -10,23 +10,23 @@
     align-items: flex-start;
     flex-wrap: wrap;
     width: 100%;
-    height: 25rem;
-    padding: 2rem;
+    height: 15.625rem;
+    padding: 1.25rem;
     border-top: 1px solid $cloud;
+    @include mobile-body-medium;
     @include tablet {
       flex-direction: row;
-      height: 7rem;
-      
+      height: 4.375rem;
       border: none;
       border-bottom: 1px solid $cloud;
     }
     &__label {
       display: flex;
       justify-content: flex-start;
-      margin: 0 2rem 0 0;
+      
       color: $slate;
-      width: 31%;
-      @include mobile-body-large;
+      width: 41%;
+      @include mobile-labels;
       @include tablet {
         display: none;
       }
@@ -34,20 +34,19 @@
     &__value {
       display: flex;
       justify-content: flex-start;
-      margin: 0 1.5rem 2rem 0;
+      margin: 0 0.9375rem 1.25rem 0;
       width: 31%;
-      @include mobile-subheader;
-      font-weight: 400;
+      @include mobile-body-large;
       @include tablet {
         width: 15%;
-        height: 2rem;
+        height: 1.25rem;
         margin-right: 0;
         justify-content: flex-start;
       }
     }
     &__name {
       width: 100%;
-      @include mobile-subheader;
+      @include mobile-body-large;
       &-link {
       text-decoration: none;
       display: flex;
@@ -55,11 +54,11 @@
       width: 50%;
       color: $indigo;
       @include tablet {
-        width: 20%;
-        height: 2rem;
+        width: 18%;
+        height: 1.25rem;
         display: flex;
         justify-content: flex-start;
-        
+        margin-left: 0.7rem;
       }
       }
     }
@@ -68,7 +67,7 @@
         display: flex;
         justify-content: flex-start;
         width: 20%;
-        height: 2rem;
+        height: 1.25rem;
       }
     }
     &__stock {
@@ -81,12 +80,12 @@
         align-items: center;
         color: $green;
         background-color: rgba(21, 132, 99, 0.07);
-        width: 7rem;
-        height: 2rem;
+        width: 4.375rem;
+        height: 1.25rem;
         border-radius: 20px;
         font-weight: 600;
         @include tablet {
-          margin-right: 3rem;
+          margin-right: 1.875rem;
         }
       }
       &--red {
@@ -96,8 +95,8 @@
         color: $red;
         background: rgba(201, 69, 21, 0.07);
         border-radius: 20px;
-        width: 8.6rem;
-        height: 2rem;
+        width: 6.5rem;
+        height: 1.25rem;
         font-weight: 600;
         @include tablet {
           margin-right: 1.5rem;
@@ -113,13 +112,16 @@
       }
     }
     &__warehouse-name {
-      width: 18%;
+      width: 35%;
+      @include tablet {
+        width: 18%
+      }
     }
     &__delete {
-      margin-top: 7rem;
+      margin-top: 3rem;
       @include tablet {
         display: none;
-        margin-right: 2rem;
+        margin-right: 1.25rem;
       }
       &-tablet {
         display: none;
@@ -129,7 +131,7 @@
       }
     }
     &__edit {
-      margin-top: 18rem;
+      margin-top: 11.25rem;
       @include tablet {
         margin: 0;
       }

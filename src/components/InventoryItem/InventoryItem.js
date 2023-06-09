@@ -9,7 +9,7 @@ const InventoryItem = ({ item }) => {
     <article className="inventory__item" key={item.id}>
       <label className="inventory__item__label">INVENTORY ITEM</label>
       <Link
-        to={`/inventory/delete/${item.id}`}
+        to={`/inventory/${item.id}`}
         className="inventory__item__name-link"
       >
         <p className="inventory__item__value inventory__item__name">
