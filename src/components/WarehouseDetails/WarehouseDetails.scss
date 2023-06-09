@@ -4,19 +4,20 @@
 @use "../../styles/partials/mixins" as *;
 
 .details{
+    box-shadow: 0px 0px 5px 0px $cloud;
     text-align: left;
     background-color: $white;
     position: relative;
-    top: -75px;
+    top: -4.6875rem;
     margin: 1rem;
     border-radius: 4px 4px 0 0;
     border-bottom: 1px solid $cloud;
     @include tablet{
         border-bottom: 0;
-        top: -120px;
+        top:-7.5rem;
     }
     @include desktop {
-        top: -100px;
+        top: -7rem;
         margin: 1rem 7rem;
     }
     &__warehouse{
@@ -25,18 +26,19 @@
         justify-content: space-between;
         align-items: center;
         @include tablet{
-            padding: 2rem 2rem;
+            padding: 1.75rem 2rem;
         }
         @include desktop{
             padding: 2rem 2rem 1rem;
         }
     }
     &__title{
-        color: $black;
-        @include mobile-header;
+        font-size: 2rem;
+        font-weight: 600;
     }
     &__subtitle{
-        @include mobile-table;
+        font-size: 1rem;
+        font-weight: 600;
         @include tablet{
             margin-bottom: 1rem;
         }
@@ -45,7 +47,8 @@
         }
     }
     &__body{
-        @include mobile-body-medium;
+        font-size: 1rem;
+        font-weight: 400;
          @include desktop{
             @include body-large;
         }

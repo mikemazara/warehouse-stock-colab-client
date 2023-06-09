@@ -1,6 +1,6 @@
 import React from "react";
 import useWarehouses from "../API functions/WarehouseApi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import editIcon from "../../assets/icons/edit-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import searchIcon from "../../assets/icons/search-24px.svg";
@@ -101,8 +101,8 @@ const WarehouseList = () => {
               <article key={warehouse.id} className="warehouse__article">
                 <div className="warehouse__name-address">
                   <h3 className="warehouse__name-header">WAREHOUSE</h3>
-                  <Link
-                    to={`/warehouse/${id}`}
+                  <NavLink
+                    to={`/warehouses/${id}`}
                     className="warehouse__name-link"
                   >
                     <h2 className="warehouse__name">
@@ -113,7 +113,7 @@ const WarehouseList = () => {
                         alt="arrow icon"
                       />
                     </h2>
-                  </Link>
+                  </NavLink>
                   <h3 className="warehouse__name-header">ADDRESS</h3>
                   <p className="warehouse__info warehouse__info-address">
                     {address}, {city}, {country}

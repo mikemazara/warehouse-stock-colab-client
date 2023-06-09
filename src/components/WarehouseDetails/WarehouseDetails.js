@@ -1,19 +1,17 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
-import edit from "../../assets/Icons/edit-24px.svg";
-import arrow from "../../assets/Icons/arrow_back-24px.svg"
+import edit from "../../assets/icons/edit-white.svg";
+import arrow from "../../assets/icons/arrow_back-24px.svg"
 import "./WarehouseDetails.scss";
 
-const WarehouseDetails = ()=>{
-    
+const WarehouseDetails = ()=>{   
     const { warehouseId } = useParams();
     const [currentWarehouse, setCurrentWarehouse] = useState([]);
     useEffect(() => {
         const getWarehouse = async () => {
             try {
-                const res = await axios.get(`http://localhost:8080/warehouses/2`);
+                const res = await axios.get(`http://localhost:8080/warehouses/${warehouseId}`);
                 setCurrentWarehouse(res.data)
             } catch (err) {
                 console.log(`Error: ${err}`)
@@ -21,6 +19,7 @@ const WarehouseDetails = ()=>{
         };
         getWarehouse();
     }, [warehouseId]);
+    
     const{     
         id,
         warehouse_name,
@@ -32,6 +31,10 @@ const WarehouseDetails = ()=>{
         contact_email,
         contact_phone,
     } = currentWarehouse;
+
+    if(!currentWarehouse){
+        return <div>Loading...</div>
+    }
 
     return(
         <section className="details" key={id}>
