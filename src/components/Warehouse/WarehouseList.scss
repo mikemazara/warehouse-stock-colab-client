@@ -160,6 +160,9 @@
         font-weight: 600;
         border-radius: 2rem;
         cursor: pointer;
+        &:hover{
+            background-color: $black;
+        }
     }
     &__table-header{
         display: none;
@@ -221,7 +224,7 @@
             
         }
         &:hover{
-            background-color: $cloud;
+            background-color: $lightGrey;
         }
 
     }
@@ -283,6 +286,9 @@
         font-weight: 600;
         font-size: 1rem;
         cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
     }
     &__name{
         font-size: 1rem;

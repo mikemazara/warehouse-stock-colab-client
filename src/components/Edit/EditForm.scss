@@ -66,6 +66,9 @@
     &__back{
         width: 1.75rem;
         margin-top: .5rem;
+        &:hover{
+            border-bottom: 1px solid $indigo;
+        }
     }
     &__title{
         font-size: 2rem;
@@ -128,7 +131,12 @@
             border-radius: 2rem;
             padding: 0 1.25rem;
             margin-bottom: 1.5rem;
+            @include desktop{
+                max-width: 45rem;
+                margin-bottom: 2rem;
+                height: 3rem;
             }
+        }
 
         &-contact-details{
             display: flex;
@@ -179,10 +187,13 @@
             font-weight: 600;
             cursor: pointer;
             @include tablet{
-                max-width: 10rem;
+                max-width: 8rem;
                 width: 10vw;
                 height: 3rem;
                 margin-right: 0;
+            }
+            &:hover{
+                background-color: $black;
             }
         }
         &-button--cancel{
@@ -190,6 +201,11 @@
             border: 1px solid $cloud;
             color: $slate;
             margin-right: 1rem;
+            &:hover{
+                border-color: $indigo;
+                color: $indigo;
+                background-color: $white;
+            }
         }
     } 
         
