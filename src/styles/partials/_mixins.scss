@@ -6,6 +6,7 @@
     align-items: $align-items;
     flex-direction: $flex-direction;
 }
+
 @mixin mobile {
     @media (min-width: 20rem) {
         @content;
@@ -87,7 +88,7 @@
 @mixin mobile-table {
     font-size: .6875rem;
     line-height: 1rem;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 @mixin mobile-body-large {

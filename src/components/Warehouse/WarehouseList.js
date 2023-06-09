@@ -1,9 +1,10 @@
 import React from "react";
-import useWarehouses from "../API functions/WarehouseApi";
 import { Link } from "react-router-dom";
-import editIcon from "../../assets/icons/edit-24px.svg";
+import useWarehouses from "../API functions/WarehouseApi";
+import editIcon from "../../assets/icons/edit-blue24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
+
 import "./WarehouseList.scss";
 
 const WarehouseList = () => {

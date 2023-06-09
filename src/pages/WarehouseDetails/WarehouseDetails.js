@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import WarehouseDetailsList from "../../components/WarehouseDetailsList/WarehouseDetailsList";
 import edit from "../../assets/icons/edit-white.svg";
 import arrow from "../../assets/icons/arrow_back-24px.svg";
 import "./WarehouseDetails.scss";
@@ -46,12 +47,12 @@ const WarehouseDetails = () => {
           </Link>
           <h1 className="details__title">{warehouse_name}</h1>
         </div>
-        <div className="details__edit-container">
-          <Link to={`/warehouses/edit/${warehouseId}`}>
+        <Link to={`/warehouses/edit/${warehouseId}`} className="details__link">
+          <div className="details__edit-container">
             <img src={edit} alt="edit button" className="details__pen" />
-          </Link>
-          <p className="details__edit">Edit</p>
-        </div>
+            <p className="details__edit">Edit</p>
+          </div>
+        </Link>
       </div>
       <div className="details__divider"></div>
       <div className="details__info">
@@ -79,6 +80,7 @@ const WarehouseDetails = () => {
           </div>
         </div>
       </div>
+      <WarehouseDetailsList/>
     </section>
   );
 };

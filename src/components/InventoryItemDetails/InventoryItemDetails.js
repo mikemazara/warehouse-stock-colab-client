@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import arrow_back from "../../assets/icons/arrow_back-24px.svg";
-import edit from "../../assets/icons/edit-24px.svg";
+import edit from "../../assets/icons/edit-white.svg";
 import "./InventoryItemDetails.scss";
 
 const InventoryItemDetails = ({ currInventory }) => {
