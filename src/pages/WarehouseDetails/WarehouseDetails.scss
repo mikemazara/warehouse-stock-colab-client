@@ -54,6 +54,9 @@
         }
 
     }
+    &__link{
+        text-decoration: none;
+    }
     &__pen{
         height: 1.2rem;
         width: 1.2rem;
@@ -79,6 +82,9 @@
         @include tablet{
             width: 5rem;
             gap: .25rem;
+        }
+        &:hover{
+            background-color: $black;
         }
     }
     &__header{
