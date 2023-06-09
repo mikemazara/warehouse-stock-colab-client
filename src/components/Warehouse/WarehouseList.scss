@@ -293,6 +293,7 @@
     &__name{
         font-size: 1rem;
         font-weight: 600;
+        color: $indigo;
         @include tablet{
             display: flex;
             justify-content: flex-start;

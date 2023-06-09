@@ -30,7 +30,7 @@ const WarehouseList = () => {
           <article key={warehouse.id} className="warehouse__article">
             <div className="warehouse__name-address">
               <h3 className="warehouse__name-header">WAREHOUSE</h3>
-              <Link to={`/warehouse/${id}`} className="warehouse__name-link">
+              <Link to={`/warehouses/${id}`} className="warehouse__name-link">
                 <h2 className="warehouse__name">
                   {warehouse_name}{" "}
                   <img
@@ -64,7 +64,7 @@ const WarehouseList = () => {
                   alt="delete icon"
                 />
               </Link>
-              <Link to={`/warehouse/edit/${warehouse.id}`}>
+              <Link to={`/warehouses/edit/${warehouse.id}`}>
                 <img
                   className="warehouse__edit-icon"
                   src={editIcon}
