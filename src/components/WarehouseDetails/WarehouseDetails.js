@@ -1,10 +1,26 @@
-import { Link } from "react-router-dom";
-// import { useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { useEffect } from "react";
+import axios from "axios";
+import WarehouseDetails from "../../components/WarehouseDetails/WarehouseDetails";
 import edit from "../../assets/Icons/edit-24px.svg";
 import arrow from "../../assets/Icons/arrow_back-24px.svg"
 import "./WarehouseDetails.scss";
 
-const WarehouseDetails = ({ currentWarehouse })=>{
+const WarehouseDetails = ()=>{
+    
+    const { warehouseId } = useParams();
+    const [currentWarehouse, setCurrentWarehouse] = useState([]);
+    useEffect(() => {
+        const getWarehouse = async () => {
+            try {
+                const res = await axios.get(`http://localhost:8080/warehouses/2`);
+                setCurrentWarehouse(res.data)
+            } catch (err) {
+                console.log(`Error: ${err}`)
+            }
+        };
+        getWarehouse();
+    }, [warehouseId]);
     const{     
         id,
         warehouse_name,
@@ -16,6 +32,7 @@ const WarehouseDetails = ({ currentWarehouse })=>{
         contact_email,
         contact_phone,
     } = currentWarehouse;
+
     return(
         <section className="details" key={id}>
             <div className="details__warehouse">
@@ -26,7 +43,11 @@ const WarehouseDetails = ({ currentWarehouse })=>{
                     <h1 className="details__title">{warehouse_name}</h1>
                 </div>
                 <div className="details__edit-container">
-                        <img src={edit} alt="edit button" className="details__pen"/>
+                        <img 
+                        src={edit} 
+                        alt="edit button" 
+                        className="details__pen"
+                        />
                         <p className="details__edit">Edit</p>
                 </div>
             </div>
