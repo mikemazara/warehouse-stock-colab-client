@@ -47,12 +47,12 @@ const WarehouseDetails = () => {
           </Link>
           <h1 className="details__title">{warehouse_name}</h1>
         </div>
-        <div className="details__edit-container">
-          <Link to={`/warehouses/edit/${warehouseId}`}>
+        <Link to={`/warehouses/edit/${warehouseId}`} className="details__link">
+          <div className="details__edit-container">
             <img src={edit} alt="edit button" className="details__pen" />
-          </Link>
-          <p className="details__edit">Edit</p>
-        </div>
+            <p className="details__edit">Edit</p>
+          </div>
+        </Link>
       </div>
       <div className="details__divider"></div>
       <div className="details__info">
