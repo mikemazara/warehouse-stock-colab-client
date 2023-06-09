@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import InventoryItem from "../../components/InventoryItem/InventoryItem";
 import InventoryBanner from "../../components/InventoryBanner/InventoryBanner";
+import InventorySortBar from "../../components/InventorySortBar/InventorySortBar";
 import "./InventoryPage.scss";
 
 const InventoryPage = () => {
@@ -25,6 +26,7 @@ const InventoryPage = () => {
     <div className="inventory">
       <div className="inventory__container">
         <InventoryBanner />
+        <InventorySortBar />
         {inventoryData?.map((item) => (
         <InventoryItem item={item} />
         ))}
