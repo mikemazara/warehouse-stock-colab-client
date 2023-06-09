@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./InventoryItem.scss";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
-import editIcon from "../../assets/Icons/edit-24px.svg";
+import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
+import editIcon from "../../assets/icons/edit-24px.svg";
 
 const InventoryItem = ({ item }) => {
   return (

@@ -1,5 +1,5 @@
 import "./InventorySortBar.scss";
-import sortIcon from "../../assets/Icons/sort-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 const InventorySortBar = () => {
   return (
     <div className="sort-bar-container">
