@@ -54,7 +54,6 @@ const EditForm = () => {
     <div className="warehouse__form-container">
       <form className="warehouse__form" onSubmit={handleSubmit}>
         <div className="warehouse__form-section">
-          <h3 className="warehouse__form-title">Warehouse Details</h3>
           <div className="warehouse__form-input-container">
             <div className="warehouse__form-warehouse-details">
               <div className="warehouse__form-warehouse-header">
