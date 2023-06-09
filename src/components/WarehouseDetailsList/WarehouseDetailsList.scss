@@ -44,7 +44,7 @@
             max-width: 40rem;
         }
     }
-    &__contact{
+    &__status{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -109,8 +109,7 @@
         }
     }
     &__info{
-        font-size: 1rem;
-        font-weight: 400;
+        @include mobile-table;
         margin-top: .5rem;
         text-align: left;
         @include tablet{
@@ -121,6 +120,35 @@
 
         }
     }
+    &__instock {
+    margin-top: .5rem;
+    padding: .3rem .5rem;
+    color: $green;
+    background-color: rgba(21, 132, 99, 0.07);
+    @include mobile-labels;
+    text-transform: uppercase;
+    border-radius: 1.25rem;
+    @include tablet {
+      padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
+
+  &__outstock {
+    margin-top: .5rem;
+    padding: .3rem .5rem;
+    color: $red;
+    background-color: rgba(201, 69, 21, 0.07);
+    @include mobile-labels;
+    text-transform: uppercase;
+    border-radius: 1.25rem;
+    @include tablet {
+      padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
     &__edit-icon{
         width: 1.5rem;
     }

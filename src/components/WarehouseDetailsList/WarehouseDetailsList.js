@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
-import edit from "../../assets/icons/edit-24px.svg";
+import edit from "../../assets/icons/edit-blue24px.svg";
 
 const WarehouseDetailsList = ()=>{
     const { id: warehouseId } = useParams();
@@ -35,20 +35,24 @@ const WarehouseDetailsList = ()=>{
                       />
                     </h2>
                   <h3 className="item__title">CATEGORY</h3>
-                  <p className="item__info item__info-address">
+                  <p className="item__info">
                     {item.category}
                   </p>
                 </div>
-                <div className="item__contact">
+                <div className="item__status">
                   <h3 className="item__title">STATUS</h3>
-                  <p className="item__info item__contact-name">
+                  <p className={
+                  !(item.status === "In Stock")
+                    ? "item__outstock"
+                    : "item__instock"
+                }>
                     {item.status}
                   </p>
                   <h3 className="item__title">
                     QTY
                   </h3>
-                  <div className="item__contact-info">
-                    <p className="iteme__info">{item.quantity}</p>
+                  <div className="item__quanity">
+                    <p className="item__info">{item.quantity}</p>
                   </div>
                 </div>
                 <div className="item__actions">
