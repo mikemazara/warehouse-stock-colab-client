@@ -4,18 +4,14 @@ import EditForm from "../../components/Edit/EditForm";
 
 const EditWarehousePage = () => {
   return (
-    <div className="warehouse">
-      <div className="warehouse__container">
-        <div className="warehouse__banner">
-          <div className="warehouse__header">
+    <div className="edit">
+      <div className="edit__container">
+        <div className="edit__banner">
+          <div className="edit__header">
             <Link to="/">
-              <img
-                className="warehouse__back"
-                src={backArrow}
-                alt="back arrow"
-              />
+              <img className="edit__back" src={backArrow} alt="back arrow" />
             </Link>
-            <h1 className="warehouse__title">Edit</h1>
+            <h1 className="edit__title">Edit Warehouse</h1>
           </div>
         </div>
         <EditForm />
