@@ -1,3 +1,4 @@
+import EditForm from "../../components/Edit/EditForm";
 import WarehouseList from "../../components/Warehouse/WarehouseList";
 import "./WarehousesPage.scss";
 
