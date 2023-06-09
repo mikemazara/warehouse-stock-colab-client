@@ -1,3 +1,4 @@
+@use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/colors" as *;
@@ -5,14 +6,14 @@
 .footer {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    background-color: $lightGrey;
+    margin-top: auto;
 
     &__text {
         margin: 0;
         padding: 10.7vw 0;
         font-size: 0.58rem;
         font-weight: 400;
+        color: $slate;
 
         @include tablet {
             padding: 9vw 0 5.5vw 0;
