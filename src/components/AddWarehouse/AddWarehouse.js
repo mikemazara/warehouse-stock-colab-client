@@ -1,10 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, Navigate} from "react-router-dom";
-import { addNewWarehouse } from "../API functions/WarehouseApi";
-import BackIcon from "../../assets/Icons/arrow_back-24px.svg";
+import BackIcon from "../../assets/icons/arrow_back-24px.svg";
 import "../AddWarehouse/AddWarehouse.scss";
 
 

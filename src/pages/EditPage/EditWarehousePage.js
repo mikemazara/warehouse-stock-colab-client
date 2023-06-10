@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import backArrow from "../../assets/Icons/arrow_back-24px.svg";
+import backArrow from "../../assets/icons/arrow_back-24px.svg";
 import EditForm from "../../components/Edit/EditForm";
 
 const EditWarehousePage = () => {

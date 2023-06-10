@@ -283,16 +283,14 @@
     &__name-link{
         text-decoration: none;
         color: $indigo;
-        font-weight: 600;
-        font-size: 1rem;
+        @include mobile-labels;
         cursor: pointer;
         &:hover{
             text-decoration: underline;
         }
     }
     &__name{
-        font-size: 1rem;
-        font-weight: 600;
+        @include mobile-labels;
         color: $indigo;
         @include tablet{
             display: flex;
@@ -309,8 +307,7 @@
         }
     }
     &__name-header{
-        font-size: 1rem;
-        font-weight: 600;
+        @include mobile-table;
         color: $slate;
         margin-top: 1.5rem;
         @include tablet{
@@ -318,8 +315,7 @@
         }
     }
     &__info{
-        font-size: 1rem;
-        font-weight: 400;
+       @include mobile-table;
         margin-top: .5rem;
         text-align: left;
         @include tablet{
@@ -331,10 +327,10 @@
         }
     }
     &__edit-icon{
-        width: 1.75rem;
+        width: 1.5rem;
     }
     &__delete-icon{
-        width: 1.75rem;
+        width: 1.5rem;
     }
 
 }
