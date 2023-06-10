@@ -1,4 +1,6 @@
 import axios from "axios";
+import closeX from "../../assets/icons/close-24px.svg";
+import "./DeleteInventory.scss";
 
 const DeleteInventory = ({ id, onClose, name }) => {
   const requestApi = "http://localhost:8080";
@@ -13,18 +15,38 @@ const DeleteInventory = ({ id, onClose, name }) => {
   };
 
   return (
-    <div>
-      <h2>Delete {name} inventory item?</h2>
+    <div className="inventory__delete-modal-box">
       <div>
-        <p>
-          Please confirme that you would like to delete {name} from the
-          inventory list. You will not be able to undo this action
-        </p>
+        <h2 className="inventory__delete-modal-header">
+          Delete {name} inventory item?
+        </h2>
+        <img
+          onClick={onClose}
+          src={closeX}
+          alt="close"
+          className="inventory__delete-modal-close"
+        />
+        <div className="inventory__delete-modal-info">
+          <p className="inventory__delete-modal-paragraph">
+            Please confirme that you would like to delete {name} from the
+            inventory list. You will not be able to undo this action
+          </p>
+        </div>
       </div>
-      <div>
-        <button onClick={onClose}>Cancel</button>
+      <div className="inventory__delete-modal-actions">
+        <button
+          onClick={onClose}
+          className="inventory__delete-modal-button inventory__delete-modal-button--cancel"
+        >
+          Cancel
+        </button>
 
-        <button onClick={() => handleDelete(id)}>Delete</button>
+        <button
+          onClick={() => handleDelete(id)}
+          className="inventory__delete-modal-button inventory__delete-modal-button--delete"
+        >
+          Delete
+        </button>
       </div>
     </div>
   );

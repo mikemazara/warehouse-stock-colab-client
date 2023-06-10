@@ -135,6 +135,9 @@
           right: 35vw;
           border: none;
           background: none;
+          &:hover {
+            cursor: pointer;
+          }
         }
         @include tablet {
           position: unset;
