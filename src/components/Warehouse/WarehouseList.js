@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useWarehouses from "../API functions/WarehouseApi";
 import editIcon from "../../assets/icons/edit-blue24px.svg";
-import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 
 import "./WarehouseList.scss";
@@ -58,13 +57,6 @@ const WarehouseList = () => {
               </div>
             </div>
             <div className="warehouse__actions">
-              <Link to={`/warehouse/delete/${warehouse.id}`}>
-                <img
-                  className="warehouse__delete-icon"
-                  src={deleteIcon}
-                  alt="delete icon"
-                />
-              </Link>
               <Link to={`/warehouses/edit/${warehouse.id}`}>
                 <img
                   className="warehouse__edit-icon"

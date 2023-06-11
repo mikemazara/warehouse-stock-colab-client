@@ -9,6 +9,10 @@ const DeleteInventory = ({ id, onClose, name }) => {
     try {
       const response = await axios.delete(requestApi + "/inventories/" + id);
       console.log(response);
+
+      setTimeout(function () {
+        window.location.href = "/inventories";
+      }, 1000);
     } catch (error) {
       console.error(error);
     }
