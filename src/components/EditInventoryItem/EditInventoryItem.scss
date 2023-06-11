@@ -80,8 +80,8 @@
 
   &__form-container {
     @include tablet {
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
     }
   }
 
@@ -92,13 +92,13 @@
     border-bottom: solid 1px $cloud;
 
     @include tablet {
-        border: none;
-        width: 50%;
-        padding: 1.35rem 2rem 0.5rem 2rem;
+      border: none;
+      width: 50%;
+      padding: 1.35rem 2rem 0.5rem 2rem;
     }
 
     @include desktop {
-        padding: 1.35rem 2.5rem 0 2.5rem;
+      padding: 1.35rem 2.5rem 0 2.5rem;
     }
   }
 
@@ -107,8 +107,8 @@
     padding-bottom: 1.35rem;
 
     @include tablet {
-        font-size: 1.5rem;
-        padding-bottom: 2rem;
+      font-size: 1.5rem;
+      padding-bottom: 2rem;
     }
   }
 
@@ -123,7 +123,7 @@
     }
 
     @include desktop {
-        font-size: 0.9rem;
+      font-size: 0.9rem;
     }
   }
 
@@ -137,15 +137,15 @@
     padding: 0 0.8rem;
 
     @include tablet {
-        height: 2.4rem;
-        font-size: 0.9rem;
-        padding: 0 0.85rem;
-        margin-bottom: 3.4vw;
+      height: 2.4rem;
+      font-size: 0.9rem;
+      padding: 0 0.85rem;
+      margin-bottom: 3.4vw;
     }
 
     @include desktop {
-        padding: 0 0.95rem;
-        margin-bottom: 2vw;
+      padding: 0 0.95rem;
+      margin-bottom: 2vw;
     }
   }
 
@@ -161,15 +161,15 @@
     padding: 0.4rem 0.8rem 0 0.8rem;
 
     @include tablet {
-        margin-bottom: 3.4vw;
-        height: 7.5rem;
-        font-size: 0.88rem;
-        padding: 0.4rem 0.85rem 0 0.85rem;
+      margin-bottom: 3.4vw;
+      height: 7.5rem;
+      font-size: 0.88rem;
+      padding: 0.4rem 0.85rem 0 0.85rem;
     }
 
     @include desktop {
-        padding: 0.4rem 0.95rem 0 0.95rem;
-        margin-bottom: 2.1vw;
+      padding: 0.4rem 0.95rem 0 0.95rem;
+      margin-bottom: 2.1vw;
     }
   }
 
@@ -189,16 +189,16 @@
     height: 2rem;
 
     @include tablet {
-        height: 2.3rem;
-        font-size: 0.9rem;
-        padding: 0 2.5rem 0 0.85rem;
-        background-size: 3.5rem 1.5rem;
+      height: 2.3rem;
+      font-size: 0.9rem;
+      padding: 0 2.5rem 0 0.85rem;
+      background-size: 3.5rem 1.5rem;
     }
 
     @include desktop {
-        padding: 0 2.6rem 0 0.95rem;
-        background-size: 3.6rem 1.5rem;
-        margin-bottom: 2.5vw;
+      padding: 0 2.6rem 0 0.95rem;
+      background-size: 3.6rem 1.5rem;
+      margin-bottom: 2.5vw;
     }
   }
 
@@ -208,15 +208,15 @@
     padding: 0.7rem 1.2rem 0.5rem 1.2rem;
 
     @include tablet {
-        width: 50%;
-        margin: 1.35rem 0 2rem 0;
-        padding: 0 2rem 0 2rem;
-        border-left: solid 1px $cloud;
+      width: 50%;
+      margin: 1.35rem 0 2rem 0;
+      padding: 0 2rem 0 2rem;
+      border-left: solid 1px $cloud;
     }
 
     @include desktop {
-        margin: 1.35rem 0 1.5rem 0;
-        padding: 0 2.5rem 1rem 2.5rem;
+      margin: 1.35rem 0 1.5rem 0;
+      padding: 0 2.5rem 1rem 2.5rem;
     }
   }
 
@@ -232,13 +232,13 @@
     padding: 0.3rem 0 0.85rem 0;
 
     @include tablet {
-        padding: 0.4rem 0 1.75rem 0;
-        margin-right: 5rem;
+      padding: 0.4rem 0 1.75rem 0;
+      margin-right: 5rem;
     }
 
     @include desktop {
-        padding: 0.4rem 0 1.7rem 0;
-        margin-right: 13.8rem;
+      padding: 0.4rem 0 1.7rem 0;
+      margin-right: 13.8rem;
     }
   }
 
@@ -252,12 +252,12 @@
     color: $slate;
 
     @include tablet {
-        font-size: 0.9rem;
-        padding-left: 0.5rem;
+      font-size: 0.9rem;
+      padding-left: 0.5rem;
     }
 
     @include desktop {
-        font-size: 0.95rem;
+      font-size: 0.95rem;
     }
   }
 
@@ -289,7 +289,7 @@
     }
 
     @include desktop {
-        padding: 1.1rem 2.5rem 0.8rem 1.2rem;
+      padding: 1.1rem 2.5rem 0.8rem 1.2rem;
     }
   }
 
@@ -311,7 +311,7 @@
     }
 
     @include desktop {
-        width: 6.5%;
+      width: 6.5%;
     }
 
     &:hover {
@@ -329,17 +329,30 @@
     align-items: center;
 
     @include tablet {
-        width: 11%;
+      width: 11%;
     }
 
     @include desktop {
-        width: 7.5%;
+      width: 7.5%;
     }
 
     &:hover {
       border-color: $indigo;
       color: $indigo;
       background-color: $white;
+    }
+  }
+
+  &__error {
+    display: flex;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 1.2rem;
+    }
+
+    @include desktop {
+      margin-bottom: 1.3rem;
     }
   }
 }

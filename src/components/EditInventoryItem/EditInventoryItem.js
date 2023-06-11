@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import arrow_back from "../../assets/icons/arrow_back-24px.svg";
+import error from "../../assets/icons/error-24px.svg";
 import "./EditInventoryItem.scss";
 
 const EditInventoryItem = () => {
@@ -16,6 +17,9 @@ const EditInventoryItem = () => {
   const [status, setStatus] = useState("");
   const [itemQty, setItemQty] = useState(0);
   const [itemWarehouse, setItemWarehouse] = useState("");
+  const [nameErr, setNameErr] = useState("");
+  const [descriptionErr, setDescriptionErr] = useState("");
+  const [qtyErr, setQtyErr] = useState("");
   const api_url = "http://localhost:8080";
 
   useEffect(() => {
@@ -29,6 +33,26 @@ const EditInventoryItem = () => {
     };
     fetchData();
   }, []);
+
+  let isValid = true;
+  const formFieldValidation = () => {
+    if (!itemName) {
+      setNameErr("This field is required");
+      isValid = false;
+    }
+
+    if (!itemDescription) {
+      setDescriptionErr("This field is required");
+      isValid = false;
+    }
+
+    if (status === "In Stock" && !itemQty) {
+      setQtyErr("This field is required");
+      isValid = false;
+    }
+
+    return isValid;
+  };
 
   let categories = [];
   let warehouses = [];
@@ -75,24 +99,26 @@ const EditInventoryItem = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    const inventoryItem = {
-      item_name: itemName,
-      description: itemDescription,
-      category: itemCategory,
-      status: status,
-      quantity: itemQty,
-      warehouse_name: itemWarehouse,
-    };
+    if (formFieldValidation()) {
+      const inventoryItem = {
+        item_name: itemName,
+        description: itemDescription,
+        category: itemCategory,
+        status: status,
+        quantity: itemQty,
+        warehouse_name: itemWarehouse,
+      };
 
-    axios
-      .put(`${api_url}/${id}`, inventoryItem)
-      .then((res) => {
-        alert("Update Successful!!");
-        navigate("/inventory");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      axios
+        .put(`${api_url}/inventories/${id}`, inventoryItem)
+        .then((res) => {
+          alert("Update Successful!!");
+          navigate("/inventory");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   useEffect(() => {
@@ -135,6 +161,12 @@ const EditInventoryItem = () => {
               value={itemName}
               onChange={(e) => setItemName(e.target.value)}
             />
+            {nameErr && (
+              <div className="edit-item__error">
+                <img className="edit-item__error-img" src={error} alt="error" />
+                <p className="edit-name__error-msg">{nameErr}</p>
+              </div>
+            )}
             <label htmlFor="itemDescription" className="edit-item__label">
               Description
             </label>
@@ -145,6 +177,12 @@ const EditInventoryItem = () => {
               value={itemDescription}
               onChange={(e) => setItemDescription(e.target.value)}
             ></textarea>
+            {descriptionErr && (
+              <div className="edit-item__error">
+                <img className="edit-item__error-img" src={error} alt="error" />
+                <p className="edit-name__error-msg">{descriptionErr}</p>
+              </div>
+            )}
             <label htmlFor="itemCategory" className="edit-item__label">
               Category
             </label>
@@ -214,8 +252,20 @@ const EditInventoryItem = () => {
                 id="itemQty"
                 name="itemQty"
                 value={itemQty}
-                onChange={(e) => setItemQty(e.target.value)}
+                onChange={(e) =>
+                  setItemQty(e.target.value ? e.target.value : 0)
+                }
               />
+              {qtyErr && (
+                <div className="edit-item__error">
+                  <img
+                    className="edit-item__error-img"
+                    src={error}
+                    alt="error"
+                  />
+                  <p className="edit-name__error-msg">{qtyErr}</p>
+                </div>
+              )}
             </div>
             <label htmlFor="itemWarehouse" className="edit-item__label">
               Warehouse
