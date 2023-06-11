@@ -22,7 +22,6 @@ function App() {
           <Route path="/inventory/:id" element={<InventoryDetailsPage />} />
           <Route path="/warehouses/edit/:id" element={<EditWarehousePage />} />
           <Route path="/warehouse/add" element={<AddWarehouse />} />
-          <Route path="/warehouse/delete/:id" element={<DeleteWarehouseModal />} />
         </Routes>
         <Footer />
       </BrowserRouter>
