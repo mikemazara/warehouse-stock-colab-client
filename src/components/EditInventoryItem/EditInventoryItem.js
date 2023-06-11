@@ -135,7 +135,7 @@ const EditInventoryItem = () => {
   return (
     <div className="edit-item">
       <div className="edit-item__header">
-        <NavLink to={`/inventory/${id}`} className="edit-item__link">
+        <NavLink to={`/inventories/${id}`} className="edit-item__link">
           <button className="edit-item__arrow-button">
             <img
               className="edit-item__arrow"
@@ -290,7 +290,7 @@ const EditInventoryItem = () => {
         </div>
         <div className="edit-item__buttons-container">
           <NavLink
-            to={`/inventory/${id}`}
+            to={`/inventories/${id}`}
             className="edit-item__button edit-item__button--cancel edit-item__link"
           >
             Cancel
