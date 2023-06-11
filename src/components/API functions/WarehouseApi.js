@@ -10,6 +10,7 @@ async function getWarehouses() {
     console.error(error);
   }
 }
+
 function useWarehouses() {
   const [warehouses, setWarehouses] = useState(null);
 
@@ -18,7 +19,6 @@ function useWarehouses() {
       setWarehouses(warehouses);
     });
   }, []);
-
   return warehouses;
 }
 
@@ -53,6 +53,13 @@ function putFunctionToEditWarehouse(id, warehouse) {
     });
 }
 
-export { getWarehouseById, useWarehouseById, putFunctionToEditWarehouse };
+function addNewWarehouse(warehouse){
+  axios
+  .post('http://localhost:8080/warehouses', warehouse)
+  .then((response) => {
+    console.log(response)
+  })
+}
+export { getWarehouseById, useWarehouseById, putFunctionToEditWarehouse, addNewWarehouse };
 export default useWarehouses;
 export { getWarehouses };
