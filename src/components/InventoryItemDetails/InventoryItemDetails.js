@@ -8,7 +8,7 @@ const InventoryItemDetails = ({ currInventory }) => {
     <section className="inv-item">
       <div className="inv-item__header">
         <div className="inv-item__title-container">
-          <NavLink to={"/inventory"} className="inv-item__link">
+          <NavLink to={"/inventories"} className="inv-item__link">
             <button className="inv-item__arrow-button">
               <img
                 className="inv-item__arrow"
@@ -21,7 +21,7 @@ const InventoryItemDetails = ({ currInventory }) => {
         </div>
         <div className="inv-item__edit-container">
           <NavLink
-            to={`/inventory/${currInventory.id}/edit`}
+            to={`/inventories/edit/${currInventory.id}`}
             className="inv-item__link"
           >
             <button className="inv-item__edit">
