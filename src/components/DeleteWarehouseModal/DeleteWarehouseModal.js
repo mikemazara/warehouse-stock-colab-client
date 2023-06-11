@@ -1,56 +1,43 @@
-import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import closeXIcon from "../../assets/icons/close-24px.svg";
 import "../DeleteWarehouseModal/DeleteWarehouseModal.scss";
 
-
-const DeleteWarehouseModal = () => {
-  const [deleteWarehouse, setDeleteWarehouse] = useState();
-  const requestApi = "http://localhost:8080";
-  const { id } = useParams();
+const DeleteWarehouseModal = ({ id, name, onClose }) => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(requestApi + "/warehouses/" + id);
+      const response = await axios.delete(`http://localhost:8080/warehouses/${id}`);
       console.log(response);
+      setTimeout(function () {
+        window.location.href = "/";
+      }, 1500);
     } catch (error) {
       console.error(error);
     }
   };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(requestApi + "/warehouses/" + id);
-        setDeleteWarehouse(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, [id]);
-
-  console.log(deleteWarehouse);
-
-  if (!deleteWarehouse) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="delete">
-      <article className="alert__card">
-        <div className="alert__card-info">
-          <h1 className="alert__card-title">Delete Warehouse?</h1>
-          <p className="alert__card-text">Please confirm that you'd like to delete from the list of warehouses. You won't be able to undo this action.</p>
-        </div>
-        <div className="alert__card-buttons">
-            <Link className="button__link-cancel" to="/">
-            <button className="alert__card-cancel" type="button" > Cancel </button>
-            </Link>
-            <button className="alert__card-delete" type="button" onClick={() => handleDelete ()}> Delete </button>
-        </div>
-      </article>
-    </div>
+    <>
+      <div className="overlay">
+        <article className="warehouse__card">
+          <div className="warehouse__card-info">
+            <h1 className="warehouse__card-title">Delete {name} Warehouse?</h1>
+            <img className="warehouse__card-close" onClick={onClose} src={closeXIcon} alt="x icon"></img>
+            <p className="warehouse__card-text">
+              Please confirm that you'd like to delete {name} from the list of warehouses. You won't be able to undo this action.
+            </p>
+          </div>
+          <div className="warehouse__card-buttons">
+            <button className="warehouse__card-cancel" type="button" onClick={onClose}>
+              {" "}
+              Cancel{" "}
+            </button>
+            <button className="warehouse__card-delete" type="button" onClick={() => handleDelete(id)}>
+              Delete
+            </button>
+          </div>
+        </article>
+      </div>
+    </>
   );
 };
 
