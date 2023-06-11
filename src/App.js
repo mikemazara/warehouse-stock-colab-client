@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "./App.scss";
 import AddWarehouse from "./components/AddWarehouse/AddWarehouse";
+import DeleteWarehouseModal from "./components/DeleteWarehouseModal/DeleteWarehouseModal";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/inventory/:id" element={<InventoryDetailsPage />} />
           <Route path="/warehouses/edit/:id" element={<EditWarehousePage />} />
           <Route path="/warehouse/add" element={<AddWarehouse />} />
+          <Route path="/warehouse/delete/:id" element={<DeleteWarehouseModal />} />
         </Routes>
         <Footer />
       </BrowserRouter>
