@@ -21,7 +21,7 @@ const InventoryItemDetails = ({ currInventory }) => {
         </div>
         <div className="inv-item__edit-container">
           <NavLink
-            to={`/inventory/${currInventory.id}/edit`}
+            to={`/inventory/edit/${currInventory.id}`}
             className="inv-item__link"
           >
             <button className="inv-item__edit">
