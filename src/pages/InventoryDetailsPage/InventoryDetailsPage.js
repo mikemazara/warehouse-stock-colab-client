@@ -22,8 +22,6 @@ const InventoryDetailsPage = () => {
   
         fetchInventory();
     }, [id])
-
-    console.log(currInventory);
   
     if (!currInventory) {
       return <p>Loading...</p>;

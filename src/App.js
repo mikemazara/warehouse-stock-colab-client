@@ -3,7 +3,7 @@ import WarehousesPage from "./pages/WarehousesPage/WarehousesPage";
 import InventoryPage from "./pages/InventoryPage/InventoryPage";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import InventoryDetailsPage from "./pages/InventoryDetailsPage/InventoryDetailsPage";
-import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage";
+import EditInventoryPage from "./pages/EditInventoryPage/EditInventoryPage.js";
 import EditWarehousePage from "./pages/EditPage/EditWarehousePage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
