@@ -1,10 +1,7 @@
 import EditInventoryItem from "../../components/EditInventoryItem/EditInventoryItem";
 
 const EditInventoryPage = () => {
-   
-    return (
-       <EditInventoryItem />
-    );
+  return <EditInventoryItem />;
 };
 
 export default EditInventoryPage;
