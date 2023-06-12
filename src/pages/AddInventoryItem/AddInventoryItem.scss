@@ -117,7 +117,7 @@
     height: 2rem;
     padding-left: 0.8rem;
     &::placeholder {
-        color: $black;
+        color: $slate;
         font-size: 0.75rem;
     }
     &:focus{
@@ -132,7 +132,7 @@
     resize: none;
     overflow: hidden;
     &::placeholder {
-        color: $black;
+        color: $slate;
         font-size: 0.75rem;
     }
     &:focus{
@@ -153,7 +153,7 @@
     border: solid 1px $cloud;
     border-radius: 20px;
     padding: 0 2rem 0 0.8rem;
-    color: $black;
+    color: $slate;
     font-size: 0.75rem;
     appearance: none;
     background: url('../../assets/icons/arrow_drop_down-24px.svg');

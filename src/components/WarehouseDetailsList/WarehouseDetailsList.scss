@@ -117,8 +117,10 @@
             width: 16vw;
             max-width: 8rem;
             font-size: .875rem;
-
         }
+    }
+    &__link{
+        text-decoration: none;
     }
     &__instock {
     margin-top: .5rem;
@@ -134,7 +136,6 @@
       text-align: center;
     }
   }
-
   &__outstock {
     margin-top: .5rem;
     padding: .3rem .5rem;
