@@ -5,6 +5,7 @@ import editIcon from "../../assets/icons/edit-blue24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 
 import "./WarehouseList.scss";
+import DeleteWarehouseToggle from "../DeleteWarehouseModal/DeleteWarehouseToggle";
 
 const WarehouseList = () => {
   const warehouses = useWarehouses();
@@ -57,6 +58,7 @@ const WarehouseList = () => {
               </div>
             </div>
             <div className="warehouse__actions">
+              <DeleteWarehouseToggle id={warehouse.id} name={warehouse_name} />
               <Link to={`/warehouses/edit/${warehouse.id}`}>
                 <img
                   className="warehouse__edit-icon"
