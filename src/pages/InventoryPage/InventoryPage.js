@@ -27,7 +27,7 @@ const InventoryPage = () => {
         <InventoryBanner />
         <InventorySortBar />
         {inventoryData?.map((item) => (
-        <InventoryItem item={item} />
+          <InventoryItem item={item} key={item.id} />
         ))}
       </div>
     </div>
