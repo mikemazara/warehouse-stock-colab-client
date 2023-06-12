@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./InventoryItem.scss";
 import editIcon from "../../assets/icons/edit-blue24px.svg";
 import DeleteInventoryItemButton from "../Delete/DeleteInventoryItemButton";
+import DeleteButtonMobile from "../Delete/DeleteButtonMobile";
+
 const InventoryItem = ({ item }) => {
   return (
     <article className="inventory__item" key={item.id}>
@@ -19,6 +21,7 @@ const InventoryItem = ({ item }) => {
       <p className="inventory__item__value inventory__item__category">
         {item.category}
       </p>
+      <DeleteButtonMobile />
       <label className="inventory__item__label">STATUS</label>
       <div className="inventory__item__stock">
         <p
