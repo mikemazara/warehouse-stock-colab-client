@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useWarehouses from "../API functions/WarehouseApi";
+import useWarehouses from "../ApiFunctions/WarehouseApi";
 import editIcon from "../../assets/icons/edit-blue24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 
