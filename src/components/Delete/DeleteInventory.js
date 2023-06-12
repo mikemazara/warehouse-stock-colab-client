@@ -11,7 +11,7 @@ const DeleteInventory = ({ id, onClose, name }) => {
       console.log(response);
 
       setTimeout(function () {
-        window.location.href = "/inventories";
+        window.location.href = "/inventory";
       }, 1000);
     } catch (error) {
       console.error(error);
@@ -32,7 +32,7 @@ const DeleteInventory = ({ id, onClose, name }) => {
         />
         <div className="inventory__delete-modal-info">
           <p className="inventory__delete-modal-paragraph">
-            Please confirme that you would like to delete {name} from the
+            Please confirm that you would like to delete {name} from the
             inventory list. You will not be able to undo this action
           </p>
         </div>
