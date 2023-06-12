@@ -6,6 +6,7 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import arrowIcon from "../../assets/icons/chevron_right-24px.svg";
 
 import "./WarehouseList.scss";
+import DeleteWarehouseToggle from "../DeleteWarehouseModal/DeleteWarehouseToggle";
 
 const WarehouseList = () => {
   const warehouses = useWarehouses();
@@ -58,13 +59,7 @@ const WarehouseList = () => {
               </div>
             </div>
             <div className="warehouse__actions">
-              <Link to={`/warehouse/delete/${warehouse.id}`}>
-                <img
-                  className="warehouse__delete-icon"
-                  src={deleteIcon}
-                  alt="delete icon"
-                />
-              </Link>
+              <DeleteWarehouseToggle id={warehouse.id} name={warehouse_name} />
               <Link to={`/warehouses/edit/${warehouse.id}`}>
                 <img
                   className="warehouse__edit-icon"
