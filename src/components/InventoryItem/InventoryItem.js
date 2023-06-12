@@ -8,7 +8,7 @@ const InventoryItem = ({ item }) => {
     <article className="inventory__item" key={item.id}>
       <label className="inventory__item__label">INVENTORY ITEM</label>
       <Link
-        to={`/inventories/${item.id}`}
+        to={`/inventory/${item.id}`}
         className="inventory__item__name-link"
       >
         <p className="inventory__item__value inventory__item__name">
@@ -43,7 +43,7 @@ const InventoryItem = ({ item }) => {
         <DeleteInventoryItemButton id={item.id} name={item.item_name} />
       </div>
       <Link
-        to={`/inventories/edit/${item.id}`}
+        to={`/inventory/edit/${item.id}`}
         className="inventory__item__edit-link"
       >
         <img className="inventory__item__edit" src={editIcon} alt="edit" />
