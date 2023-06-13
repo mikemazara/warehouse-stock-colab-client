@@ -29,7 +29,7 @@ const DeleteWarehouseModal = ({ id, name, onClose }) => {
           <div className="warehouse__card-buttons">
             <button className="warehouse__card-cancel" type="button" onClick={onClose}>
               {" "}
-              Cancel{" "}
+              <p className="warehouse__card-cancel--text">Cancel</p>{" "}
             </button>
             <button className="warehouse__card-delete" type="button" onClick={() => handleDelete(id)}>
               Delete

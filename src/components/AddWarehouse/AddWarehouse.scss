@@ -104,6 +104,15 @@
             border: 1px solid $cloud;
             height: 2.2rem;
             width: 48%;
+            &:hover{
+                border-color: $indigo;
+                color: $indigo;
+                background-color: $white;
+            }
+        }
+        &-link{
+            text-decoration: none;
+            width: 100%;
         }
         &-add{
             border:none;
@@ -113,5 +122,19 @@
             height: 2.2rem;
             width: 48%
         }
+    }
+    &__error{
+        border: 1px solid $red;
+    }
+    &__error-icon{
+        height: .8125rem;
+        width: .8125rem;
+    }
+    &__error-message{
+        @include body-small;
+        display: flex;
+        align-items: center;
+        color: $red;
+        margin-left: 1rem;
     }
 }
