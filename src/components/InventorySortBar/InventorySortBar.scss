@@ -8,7 +8,8 @@
     display: flex;
     justify-content: flex-start;
     width: 88vw;
-    background: rgba(46, 102, 230, 0.07);
+    height: 3rem;
+    background: rgba(247, 248, 249, 0.7);
   }
 }
 
@@ -16,7 +17,7 @@
   &__inventory {
     display: flex;
     align-items: center;
-    height: 4rem;
+    height: 3rem;
     width: 17%;
     margin-left: 2rem;
   }
