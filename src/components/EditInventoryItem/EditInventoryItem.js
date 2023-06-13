@@ -34,6 +34,57 @@ const EditInventoryItem = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const fetchInventory = async () => {
+      try {
+        if (id) {
+          const response = await axios.get(`${api_url}/inventories/${id}`);
+          setCurrInventory(response.data);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchInventory();
+  }, [id]);
+
+  useEffect(() => {
+    if (currInventory) {
+      setItemName(currInventory.item_name);
+      setItemDescription(currInventory.description);
+      setItemCategory(currInventory.category);
+      setStatus(currInventory.status);
+      setItemQty(currInventory.quantity);
+      setItemWarehouse(currInventory.warehouse_name);
+    }
+  }, [currInventory]);
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    if (formFieldValidation()) {
+      const inventoryItem = {
+        item_name: itemName,
+        description: itemDescription,
+        category: itemCategory,
+        status: status,
+        quantity: itemQty,
+        warehouse_name: itemWarehouse,
+      };
+
+      axios
+        .put(`${api_url}/inventories/${id}`, inventoryItem)
+        .then((res) => {
+          alert("Update Successful!!");
+          navigate("/inventory");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
+
   let isValid = true;
   const formFieldValidation = () => {
     if (!itemName) {
@@ -81,61 +132,10 @@ const EditInventoryItem = () => {
     outStockClass = "edit-item__stock edit-item__stock--selected";
   }
 
-  useEffect(() => {
-    const fetchInventory = async () => {
-      try {
-        if (id) {
-          const response = await axios.get(`${api_url}/inventories/${id}`);
-          setCurrInventory(response.data);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    fetchInventory();
-  }, [id]);
-
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-
-    if (formFieldValidation()) {
-      const inventoryItem = {
-        item_name: itemName,
-        description: itemDescription,
-        category: itemCategory,
-        status: status,
-        quantity: itemQty,
-        warehouse_name: itemWarehouse,
-      };
-
-      axios
-        .put(`${api_url}/inventories/${id}`, inventoryItem)
-        .then((res) => {
-          alert("Update Successful!!");
-          navigate("/inventory");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  };
-
-  useEffect(() => {
-    if (currInventory) {
-      setItemName(currInventory.item_name);
-      setItemDescription(currInventory.description);
-      setItemCategory(currInventory.category);
-      setStatus(currInventory.status);
-      setItemQty(currInventory.quantity);
-      setItemWarehouse(currInventory.warehouse_name);
-    }
-  }, [currInventory]);
-
   return (
     <div className="edit-item">
       <div className="edit-item__header">
-        <NavLink to={`/inventories/${id}`} className="edit-item__link">
+        <NavLink to={`/inventory/${id}`} className="edit-item__link">
           <button className="edit-item__arrow-button">
             <img
               className="edit-item__arrow"
@@ -290,7 +290,7 @@ const EditInventoryItem = () => {
         </div>
         <div className="edit-item__buttons-container">
           <NavLink
-            to={`/inventories/${id}`}
+            to={`/inventory/${id}`}
             className="edit-item__button edit-item__button--cancel edit-item__link"
           >
             Cancel

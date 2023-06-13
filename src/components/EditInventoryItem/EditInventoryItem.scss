@@ -49,6 +49,7 @@
     border: none;
     background: none;
     padding: 0.5rem 0 0.1rem 0;
+    cursor: pointer;
 
     @include tablet {
       padding-bottom: 0;
