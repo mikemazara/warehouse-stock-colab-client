@@ -235,7 +235,7 @@ const AddWarehouse = () => {
             <div className="addwarehouse__buttons-container">
               <button className="addwarehouse__buttons-cancel" >
                 <Link to='/' className="addwarehouse__buttons-link">
-                    Cancel
+                    <p className="warehouse__card-cancel--text">Cancel</p>
                 </Link>
               </button>
               <button className="addwarehouse__buttons-add" type="submit">
