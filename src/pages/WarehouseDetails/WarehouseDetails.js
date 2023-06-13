@@ -5,7 +5,7 @@ import WarehouseDetailsList from "../../components/WarehouseDetailsList/Warehous
 import edit from "../../assets/icons/edit-white.svg";
 import arrow from "../../assets/icons/arrow_back-24px.svg";
 import "./WarehouseDetails.scss";
-//warehouse edit cancel button
+
 const WarehouseDetails = () => {
   const { id: warehouseId } = useParams();
   const [currentWarehouse, setCurrentWarehouse] = useState([]);
