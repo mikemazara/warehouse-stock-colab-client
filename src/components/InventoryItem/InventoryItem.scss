@@ -14,19 +14,30 @@
     padding: 1.25rem;
     border-top: 1px solid $cloud;
     @include mobile-body-medium;
+    &:hover .inventory__item__delete {
+      text-decoration: none;
+      background: rgba(46, 102, 230, 0.01);
+
+    }
     @include tablet {
       flex-direction: row;
       height: 4.375rem;
       border: none;
       border-bottom: 1px solid $cloud;
     }
-    &:hover {
+    &:hover{
       background: rgba(46, 102, 230, 0.07);
+
     }
+    &:hover .inventory__item__delete-tablet {
+      text-decoration: none;
+      background: rgba(46, 102, 230, 0.01);
+
+    }
+   
     &__label {
       display: flex;
       justify-content: flex-start;
-      
       color: $slate;
       width: 41%;
       @include mobile-labels;
@@ -122,30 +133,38 @@
     &__warehouse-name {
       width: 35%;
       @include tablet {
-        width: 18%
+        width: 19%
       }
     }
     &__delete {
-      margin-top: 3rem;
+      margin-top: 1.5rem;
+      border: none;
+      background-color: $white;
       @include tablet {
         display: none;
         margin-right: 1.25rem;
+        
       }
       &-tablet {
+        display: none;
         @include tablet {
           display: initial;
+          border: none;
+          background-color: $white;
+        }
+        &:hover {
+          cursor: pointer;
         }
       }
       &-button{
+        display: none;
         @include mobile{
           position: relative;
           top: 3.25rem;
           right: 35vw;
           border: none;
           background: none;
-          &:hover {
-            cursor: pointer;
-          }
+          
         }
         @include tablet {
           position: unset;
@@ -155,18 +174,20 @@
         }
       
       }
-    }
-    &__edit-link {
-      @include mobile{
-        position: relative;
-        top: 1.25rem;
-        left: 26vw;
       }
-      @include tablet {
-        margin-top: .5rem;
-        position: unset;
-      }
-    }
+      &__edit {
+        &-link {
+          @include mobile{
+            position: relative;
+            top: 11rem;
+      
+          }
+        @include tablet {
+          margin-left: .05rem;
+          position: unset;
+        }
+        }
     
-  }
+        }
+      }
 }

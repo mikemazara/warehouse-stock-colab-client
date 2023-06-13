@@ -89,6 +89,12 @@
     width: 48%;
     &:hover {
       cursor: pointer;
+      border-color: $indigo;
+    }
+    &--text{
+      &:hover {
+        color: $indigo;
+      }
     }
   }
   &-delete {
@@ -100,6 +106,7 @@
     width: 48%;
     &:hover {
       cursor: pointer;
+      background-color: $black;
     }
   }
 }

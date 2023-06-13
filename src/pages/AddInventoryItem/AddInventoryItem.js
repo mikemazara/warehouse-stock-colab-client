@@ -43,11 +43,12 @@ const AddInventoryItem = () => {
     ];
   }
 
-
-
   const handleStatus = (e)=>{
     setItemStatus(e.target.value);
-    setVisible(e.target.value !== "Out of Stock")
+    setVisible(e.target.value !== "Out of Stock");
+    if(e.target.value === "Out of Stock"){
+      setItemQuantity("0");
+    }
   }
 
   const handleSubmit = (event) => {
@@ -79,7 +80,7 @@ const AddInventoryItem = () => {
             return 2
         } else if(itemWarehouse === "Jersey"){
             return 3
-        } else if(itemWarehouse === "SF"){
+        } else if(itemWarehouse === "San Fran"){
             return 4
         } else if(itemWarehouse === "Santa Monica"){
             return 5
@@ -99,14 +100,11 @@ const AddInventoryItem = () => {
         quantity: itemQuantity,
         warehouse_id: findWarehouse()
       } 
-      console.log(item);
       const post = async ()=>{
         try{
-            const res = await axios.post("http://localhost:8080/inventories", item);
-            console.log(res.data);
-            alert("New Item added");
+            await axios.post("http://localhost:8080/inventories", item);
             navigate("/inventory");
-        } catch(err){
+        }catch(err){
             console.log(`Err:${err}`)
         }
       }
@@ -141,6 +139,7 @@ const AddInventoryItem = () => {
             type="text"
             id="itemName"
             name="itemName"
+            placeholder="Item Name"
             value={itemName}
             onChange={(e) => setItemName(e.target.value)}
           />
@@ -201,7 +200,7 @@ const AddInventoryItem = () => {
                             id="inStock"
                             name="available"
                             className="add-item__select"
-                            value="instock"
+                            value="In Stock"
                             onChange={handleStatus}
                         />
                         <label htmlFor="itemStatus" className="add-item__stock">
@@ -270,9 +269,11 @@ const AddInventoryItem = () => {
         </div>
         </div>
         <div className="add-item__buttons-container">
-        <button className="add-item__button add-item__button--cancel">
-            Cancel
-          </button>
+          <NavLink to={`/inventory`}>
+            <button className="add-item__button add-item__button--cancel">
+              Cancel
+            </button>
+          </NavLink>
           <button className="add-item__button" type="submit">
             + Add Item
           </button>

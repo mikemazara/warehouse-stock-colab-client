@@ -4,17 +4,17 @@ import DeleteInventory from "./DeleteInventory";
 import "../InventoryItem/InventoryItem.scss";
 import "./DeleteInventory.scss";
 
-function DeleteInventoryItemButton({ id, name }) {
+function DeleteButtonMobile({ id, name }) {
   const [open, setOpen] = useState(false);
   return (
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="inventory__item__delete-tablet"
+        className="inventory__item__delete"
       >
         {" "}
         <img
-          className="inventory__item__delete-tablet"
+          className="inventory__item__delete"
           src={deleteIcon}
           alt="delete"
         />
@@ -28,4 +28,4 @@ function DeleteInventoryItemButton({ id, name }) {
   );
 }
 
-export default DeleteInventoryItemButton;
+export default DeleteButtonMobile;

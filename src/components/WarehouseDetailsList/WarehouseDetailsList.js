@@ -7,18 +7,18 @@ import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
 import edit from "../../assets/icons/edit-blue24px.svg";
 
 const WarehouseDetailsList = ()=>{
-    const { id: warehouseId } = useParams();
+    const { id } = useParams();
     const [currentWarehouse, setcurrentWarehouse] = useState([]);
     useEffect(()=>{
         const getWarehouse = async ()=>{
-          try{  const res = await axios(`http://localhost:8080/warehouses/${warehouseId}/inventories`);
+          try{  const res = await axios(`http://localhost:8080/warehouses/${id}/inventories`);
             setcurrentWarehouse(res.data);
         }catch(err) {
                 console.log(`Error: ${err}`)
             }
         }
         getWarehouse()
-    },[warehouseId])
+    },[id])
     return(
          <div className="item">
             { currentWarehouse.map(item =>{
@@ -26,14 +26,16 @@ const WarehouseDetailsList = ()=>{
                 <article key={item.id} className="item__article">
                 <div className="item__inventory">
                   <h3 className="item__title">INVENTORY ITEM</h3>
-                    <h2 className="item__name">
-                      {item.item_name}
-                      <img
-                        className="item__arrow-icon"
-                        src={chevron}
-                        alt="arrow icon"
-                      />
-                    </h2>
+                    <Link to={`/inventory/${item.id}`} className="item__link">
+                      <h2 className="item__name">
+                        {item.item_name}
+                        <img
+                          className="item__arrow-icon"
+                          src={chevron}
+                          alt="arrow icon"
+                        />
+                      </h2>
+                    </Link>
                   <h3 className="item__title">CATEGORY</h3>
                   <p className="item__info">
                     {item.category}

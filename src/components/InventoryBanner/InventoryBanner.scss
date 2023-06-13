@@ -136,6 +136,9 @@
     border-radius: 2rem;
     cursor: pointer;
     margin-bottom: 1.5rem;
+    &:hover {
+      background-color: $black;
+    }
     @include tablet{
       width: 12rem;
       height: 3rem;
