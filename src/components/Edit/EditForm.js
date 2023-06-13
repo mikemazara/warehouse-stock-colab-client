@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useWarehouseById } from "../ApiFunctions/WarehouseApi";
@@ -34,6 +34,11 @@ const EditForm = () => {
       console.log(response);
     });
 
+    window.location.href = "/";
+  };
+
+  const handleCancel = (e) => {
+    e.preventDefault();
     window.location.href = "/";
   };
 
@@ -158,7 +163,7 @@ const EditForm = () => {
         </div>
 
         <div className="edit__form-button-container">
-          <button className="edit__form-button edit__form-button--cancel">
+          <button className=" edit__form-button--cancel" onClick={handleCancel}>
             Cancel
           </button>
           <button className="edit__form-button" type="submit">
