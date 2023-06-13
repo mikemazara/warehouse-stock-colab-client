@@ -1,8 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import { Link, Navigate} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import BackIcon from "../../assets/icons/arrow_back-24px.svg";
+import error_icon from "../../assets/icons/error-24px.svg"
 import "../AddWarehouse/AddWarehouse.scss";
 
 
@@ -15,33 +16,63 @@ const AddWarehouse = () => {
   const [contactPosition, setContactPosition] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [redirectHome, setRedirectHome] = useState(false);
+  const [formErrors, setFormErrors] = useState("");
+  const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      const newWarehouse = {
-      warehouse_name: warehouseName,
-      address: street,
-      city: city,
-      country: country,
-      contact_name: contactName,
-      contact_position: contactPosition,
-      contact_phone: phoneNumber,
-      contact_email: email,
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let errors = {};
+
+        if (warehouseName.trim() === "") {
+            errors.warehouseName = "This field is required";
+        }
+        if (street.trim() === "") {
+            errors.street = "This field is required";
+        }
+        if (city.trim() === "") {
+            errors.city = "This field is required";
+        }
+        if (country.trim() === "") {
+            errors.country = "This field is required";
+        }
+        if (contactName.trim() === "") {
+            errors.contactName = "This field is required";
+        }
+        if (contactPosition.trim() === "") {
+            errors.contactPosition = "This field is required";
+        }
+        if (phoneNumber.trim() === "") {
+            errors.phoneNumber = "This field is required";
+        }
+        if (email.trim() === "") {
+            errors.email = "This field is required";
+        }
+        
+      setFormErrors(errors);
+
+      if (Object.keys(errors).length === 0) {
+            const newWarehouse = {
+              warehouse_name: warehouseName,
+              address: street,
+              city: city,
+              country: country,
+              contact_name: contactName,
+              contact_position: contactPosition,
+              contact_phone: phoneNumber,
+              contact_email: email,
+            }
+
+        const postWarehouse = async()=>{
+          try{
+            axios.post("http://localhost:8080/warehouses", newWarehouse);
+            navigate("/");
+          }catch(err){
+            console.error(err)
+          }
+        }
+        postWarehouse();
       }
-      if (!newWarehouse) {
-        alert("Uh oh! Please fill out all input fields before proceeding!");
-      } else {
-        alert("Warehouse submitted successfully! Redirecting you to the Home Page, safe travels! ");
-      }
-      axios.post("http://localhost:8080/warehouses", newWarehouse).then((res) => {
-        console.log(res.data);
-      });
-      setRedirectHome(true);
     };
-    if (redirectHome) {
-      return <Navigate to="/" />;
-    }
   return (
     <>
       <section className="addwarehouse">
@@ -61,20 +92,27 @@ const AddWarehouse = () => {
                 <div className="addwarehouse__details-element">
                   <p className="addwarehouse__element-title">Warehouse Name</p>
                   <input
-                    className="addwarehouse__details-input"
+                    className={`addwarehouse__details-input ${
+                    formErrors.warehouseName ? "addwarehouse__error" : ""
+                    }`}
                     placeholder="Warehouse Name"
                     value={warehouseName}
                     type="text"
                     id="warehousename"
                     name="warehousename"
                     onChange={(e) => setWarehouseName(e.target.value)}
-                  ></input>
+                  />
+                  {formErrors.warehouseName && (
+                   <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.warehouseName}</div>
+                  )}
                 </div>
               </div>
               <div className="addwarehouse__details-element">
                 <p className="addwarehouse__element-title">Street Address</p>
                 <input
-                  className="addwarehouse__details-input"
+                  className={`addwarehouse__details-input ${
+                    formErrors.street ? "addwarehouse__error" : ""
+                  }`}
                   placeholder="Street Address"
                   value={street}
                   type="text"
@@ -82,30 +120,43 @@ const AddWarehouse = () => {
                   name="street"
                   onChange={(e) => setStreet(e.target.value)}
                 ></input>
+                {formErrors.street && (
+                  <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.street}</div>
+                )}
               </div>
               <div className="addwarehouse__details-element">
                 <p className="addwarehouse__element-title">City</p>
                 <input
-                  className="addwarehouse__details-input"
+                  className={`addwarehouse__details-input ${
+                    formErrors.city ? "addwarehouse__error" : ""
+                  }`}
                   placeholder="City"
                   value={city}
                   type="text"
                   id="city"
                   name="city"
                   onChange={(e) => setCity(e.target.value)}
-                ></input>
+                />
+                {formErrors.city && (
+                   <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.city}</div>
+                )}
               </div>
               <div className="addwarehouse__details-element">
                 <p className="addwarehouse__element-title">Country</p>
                 <input
-                  className="addwarehouse__details-input"
+                  className={`addwarehouse__details-input ${
+                    formErrors.country ? "addwarehouse__error" : ""
+                  }`}
                   placeholder="Country"
                   value={country}
                   type="text"
                   id="country"
                   name="country"
                   onChange={(e) => setCountry(e.target.value)}
-                ></input>
+                  />
+                  {formErrors.country && (
+                   <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.country}</div>
+                  )}
               </div>
             </div>
             <div className="addwarehouse__form-tablet">
@@ -113,56 +164,79 @@ const AddWarehouse = () => {
               <div className="addwarehouse__details-container">
                 <p className="addwarehouse__element-title">Contact Name</p>
                 <input
-                  className="addwarehouse__details-input"
+                  className={`addwarehouse__details-input ${
+                    formErrors.contactName ? "addwarehouse__error" : ""
+                  }`}
                   placeholder="Contact Name"
                   value={contactName}
                   type="text"
                   id="number"
                   name="number"
                   onChange={(e) => setContactName(e.target.value)}
-                ></input>
+                  />
+                  {formErrors.contactName && (
+                   <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.contactName}</div>
+                  )}
               </div>
               <div className="addwarehouse__details-element">
                 <p className="addwarehouse__element-title">Position</p>
                 <input
-                  className="addwarehouse__details-input"
+                  className={`addwarehouse__details-input ${
+                    formErrors.contactPosition ? "addwarehouse__error" : ""
+                  }`}
                   placeholder="Position"
+                  value={contactPosition}
                   type="text"
                   id="position"
                   name="position"
                   onChange={(e) => setContactPosition(e.target.value)}
-                ></input>
+                  />
+                  {formErrors.contactPosition && (
+                   <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.contactPosition}</div>
+                )}
               </div>
               <div className="addwarehouse__details-element">
                 <p className="addwarehouse__element-title">Phone Number</p>
                 <input
-                  className="addwarehouse__details-input"
+                  className={`addwarehouse__details-input ${
+                    formErrors.phoneNumber? "addwarehouse__error" : ""
+                  }`}
                   placeholder="Phone Number"
                   value={phoneNumber}
                   type="text"
                   id="number"
                   name="number"
                   onChange={(e) => setPhoneNumber(e.target.value)}
-                ></input>
+                />
+                {formErrors.phoneNumber && (
+                   <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.phoneNumber}</div>
+                )}
               </div>
               <div className="addwarehouse__details-element">
                 <p className="addwarehouse__element-title">Email</p>
                 <input
-                  className="addwarehouse__details-input"
+                  className={`addwarehouse__details-input ${
+                    formErrors.email ? "addwarehouse__error" : ""
+                  }`}
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   type="text"
                   id="email"
                   name="email"
-                ></input>
+                />
+                {formErrors.email && (
+                   <div className="addwarehouse__error-message"><img src={error_icon} alt="error symbol" className="addwarehouse__error-icon"/>{formErrors.email}</div>
+                )}
               </div>
             </div>
           </div>
           <div className="addwarehouse__buttons">
             <div className="addwarehouse__buttons-container">
-              <button className="addwarehouse__buttons-cancel" type="submit">
-                Cancel
+              <button className="addwarehouse__buttons-cancel" >
+                <Link to='/' className="addwarehouse__buttons-link">
+                    <p className="warehouse__card-cancel--text">Cancel</p>
+                </Link>
               </button>
               <button className="addwarehouse__buttons-add" type="submit">
                 + Add Warehouse

@@ -60,11 +60,15 @@
     }
     &__name {
       width: 100%;
-      color: $indigo;
+      color: $indigo;   
       @include mobile-labels;
       @include tablet {
         @include labels;
       }
+      &:hover {
+        text-decoration: underline;
+      }
+
       &-link {
       text-decoration: none;
       display: flex;
@@ -146,7 +150,8 @@
         
       }
       &-tablet {
-        display: none;
+        border: none;
+        background-color: $white;
         @include tablet {
           display: initial;
           border: none;
